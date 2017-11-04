@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <scroll-view class="progress" scroll-y style="height: 50vh;" scroll-top="{{scroll_top}}">
+    <text wx:for="{{progress}}" wx:if="{{hasUserInfo}}" >
+      {{index + 1}}: {{item}}
+    </text>
+  </scroll-view>
+  <view class="usermotto">
+    <button wx:if="{{hasUserInfo}}" data-openid="{{ OPEN_ID }}" bindtap="checkAuth"> 扫码登录 </button>
+  </view>
+</view>

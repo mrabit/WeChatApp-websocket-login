@@ -1,0 +1,39 @@
+/**index.wxss**/
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  position: fixed;
+  bottom: 20px;
+  left: calc(50% - 50px)
+}
+
+.progress {
+  font-size: 12px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.issue:before {
+  counter-increment: issues 1;
+  content: counter(issues, decimal) + '.';
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+}

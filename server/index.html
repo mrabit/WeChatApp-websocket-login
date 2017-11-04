@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="utf8">
+
+<head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>websocket</title>
+</head>
+
+<body>
+    <div id="qrcode"></div>
+</body>
+<script>
+    var ws = new WebSocket('ws://192.168.0.100:8088?login');
+
+    ws.onopen = _ => {
+        console.log('open socket');
+    }
+
+    ws.onmessage = evt => {
+        var result = JSON.parse(evt.data);
+        var img_url = result.img_url;
+        var msg = result.message;
+        if (img_url) {
+            var img = new Image();
+            img.src = img_url;
+            document.getElementById('qrcode').appendChild(img);
+        } else {
+            alert(msg);
+        }
+    }
+</script>
+
+</html>
