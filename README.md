@@ -4,7 +4,7 @@ websocket配合小程序实现扫码登录
 
 1. 服务端(server文件夹):
     - 安装依赖: `cnpm install`
-    - 修改配置项: server.js
+    - 修改配置项: server.js && db.js
     - 运行: `node server.js`
 
 2. 小程序(wx_app文件夹):
